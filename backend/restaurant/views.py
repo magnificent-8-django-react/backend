@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from restaurant.models import RestaurantTruck, Review, Menu
+from user.models import RestaurantTruck, Review, Menu
 from rest_framework import viewsets, permissions
 from restaurant.serializers import RestaurantTruckSerializer, ReviewSerializer, MenuSerializer
 
@@ -18,7 +18,7 @@ class RestaurantTruckViewSet(viewsets.ModelViewSet):
     #     serializer.save(owner=self.request.user)
 
 class ReviewViewSet(viewsets.ModelViewSet):
-    queryset = ReviewSerializer.objects.all().order_by('id')
+    queryset = Review.objects.all().order_by('id')
     serializer_class = ReviewSerializer
 
 class MenuViewSet(viewsets.ModelViewSet):
