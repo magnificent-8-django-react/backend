@@ -62,10 +62,22 @@ class Menu(models.Model):
     def __str__(self):
         return(f"{self.dish}")
 
+class MenuPage(models.Model):
+    image = models.ImageField(upload_to='images/')
+    restaurant_menu = models.ForeignKey(
+        RestaurantTruck,
+        related_name="restaurant_menu",
+        on_delete=models.CASCADE,
+        null=True
+    )
+
+    def __str__(self):
+        return(f"{self.image} | {self.restaurant_menu}")
+
 class Review(models.Model):
     stars = models.IntegerField(default=3)
     comment = models.TextField()
-    truck_review = models.OneToOneField(
+    truck_review = models.ForeignKey(
         RestaurantTruck,
         related_name="truck_review",
         on_delete=models.CASCADE,
