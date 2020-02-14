@@ -5,7 +5,7 @@ class RestaurantTruckSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = RestaurantTruck
         # fields = '__all__'
-        fields = ['id', 'restaurant', 'username', 'email', 'phone', 'rating', 'owner']
+        fields = ['id', 'restaurant', 'username', 'email', 'phone', 'rating', 'owner', 'lat', 'long']
 
 class ReviewSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
