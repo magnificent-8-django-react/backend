@@ -21,6 +21,8 @@ class RestaurantTruck(models.Model):
     email = models.CharField(max_length=300)
     phone = models.CharField(max_length=300)
     rating = models.IntegerField(default=0)
+    lat = models.FloatField(default=0)
+    long = models.FloatField(default=0)
     owner = models.OneToOneField(
         User,
         related_name="owner",
