@@ -112,3 +112,6 @@ GitHub.sublime-settings
 
 # Visual Studio Code # 
 .vscode/
+
+# Pycharm
+.idea/
